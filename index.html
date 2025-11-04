@@ -3,378 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rạp Xiếc Cải Lương - Đại Danh Hài Bảy Bảnh</title>
-    <!-- Tải Bootstrap CSS và JS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Tải Font chữ Inter cho Bootstrap (mặc định) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- Tải Font Chữ Kịch Tính cho tiêu đề -->
-    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Lobster&display=swap" rel="stylesheet">
-
+    <title>Hồ Thanh Bạch: SIÊU PHẨM CỦA TẠO HÓA (Thất Bại)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* CSS Cải Lương (Melodramatic CSS) */
+        /* CSS Cục Súc & Ngộ Nghĩnh */
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #ffdd00, #ff0055, #00fff2); /* Gradient chói lọi */
-            background-size: 400% 400%;
-            animation: gradient-shift 10s ease infinite; /* Nền chuyển động liên tục */
-            color: #333;
-            padding-bottom: 50px;
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
         }
-
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .header-section {
+            background: linear-gradient(45deg, #ff6b6b, #ffe66d); /* Màu chuyển rực rỡ */
+            color: white;
+            padding: 50px 0;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Tạo bóng cho chữ kiêu căng */
+            border-bottom: 8px solid #333; /* Đường viền đen ngòm */
         }
-
-        .circus-header {
-            font-family: 'Chicle', cursive;
-            text-shadow: 5px 5px #000000, 10px 10px #ff0055; /* Shadow lố bịch */
-            animation: shake-extreme 0.5s infinite; /* Tiêu đề rung lắc liên tục */
-            font-size: clamp(2rem, 10vw, 5rem);
-            color: #ffeb3b; /* Vàng chóe */
-            border: 5px dashed #ff0055;
-            background-color: #000000;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 15px;
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 10px solid #333; /* Khung ảnh cục súc */
+            border-radius: 50%;
+            box-shadow: 0 0 30px #ff6b6b; /* Ảnh phát sáng lóa mắt */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-
-        @keyframes shake-extreme {
+        .profile-img:hover {
+            transform: scale(1.1) rotate(5deg); /* Ảnh bỗng dưng bay lượn */
+            box-shadow: 0 0 50px #ffe66d;
+        }
+        .description-card {
+            background-color: #ffffff;
+            border: 5px dashed #333; /* Viền thẻ kiểu "Vô Lý" */
+            box-shadow: 10px 10px 0 #ff6b6b; /* Bóng đổ lệch lạc, vô lý */
+            margin-bottom: 30px;
+            padding: 30px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .description-card:hover {
+            box-shadow: -10px -10px 0 #ffe66d; /* Lật ngược bóng đổ, lật kèo */
+        }
+        .highlight-text {
+            color: #ff6b6b;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        /* Hiệu ứng Ngộ Nghĩnh: Lắc lư khi di chuột */
+        .shake-on-hover {
+            display: inline-block;
+        }
+        .shake-on-hover:hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes shake {
             0% { transform: translate(1px, 1px) rotate(0deg); }
-            25% { transform: translate(-3px, 0px) rotate(1deg); }
-            50% { transform: translate(3px, 1px) rotate(-1deg); }
-            75% { transform: translate(-1px, 2px) rotate(1deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
             100% { transform: translate(1px, -2px) rotate(-1deg); }
-        }
-
-        .profile-card {
-            border: 10px solid #ff0055; /* Viền hồng kịch tính */
-            box-shadow: 0 0 30px rgba(255, 255, 0, 0.9), 0 0 50px rgba(0, 255, 255, 0.7); /* Hào quang */
-            background-color: rgba(255, 255, 255, 0.95);
-            animation: pulse-border 2s infinite alternate; /* Viền nhấp nháy */
-            border-radius: 20px;
-        }
-
-        @keyframes pulse-border {
-            0% { border-color: #ff0055; box-shadow: 0 0 30px rgba(255, 255, 0, 0.9); }
-            100% { border-color: #00ff2a; box-shadow: 0 0 50px rgba(0, 255, 255, 0.7); }
-        }
-
-        .dramatic-quote {
-            font-family: 'Lobster', cursive;
-            font-size: 1.5rem;
-            color: #ff0055;
-            text-align: center;
-            margin-top: 20px;
-            animation: bounce-in 1s ease-out;
-        }
-
-        @keyframes bounce-in {
-            0%, 20%, 40%, 60%, 80%, 100% { transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); }
-            0% { opacity: 0; transform: scale3d(.3, .3, .3); }
-            20% { transform: scale3d(1.1, 1.1, 1.1); }
-            40% { transform: scale3d(.9, .9, .9); }
-            60% { opacity: 1; transform: scale3d(1.03, 1.03, 1.03); }
-            80% { transform: scale3d(.97, .97, .97); }
-            100% { opacity: 1; transform: scale3d(1, 1, 1); }
-        }
-
-        .dramatic-btn {
-            font-size: 2rem;
-            padding: 15px 40px;
-            border-radius: 50px;
-            background-image: linear-gradient(45deg, #ff0055, #ffeb3b);
-            border: 5px solid #000;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s;
-            animation: glowing 1.5s infinite alternate;
-        }
-
-        .dramatic-btn:hover {
-            transform: scale(1.1) rotate(-5deg);
-            box-shadow: 0 15px 30px rgba(255, 0, 85, 0.8);
-        }
-
-        @keyframes glowing {
-            0% { box-shadow: 0 0 5px #ffeb3b, 0 0 20px #ff0055; }
-            100% { box-shadow: 0 0 20px #ffeb3b, 0 0 50px #ff0055; }
-        }
-        
-        /* Animation cho Bạn Hữu */
-        @keyframes flash-text {
-            0%, 100% { color: #ffeb3b; text-shadow: 0 0 10px #ff0055; }
-            50% { color: #ffffff; text-shadow: 0 0 20px #00fff2; }
-        }
-        
-        @keyframes spin-slow-reverse {
-            from { transform: rotateY(0deg); }
-            to { transform: rotateY(-360deg); }
-        }
-        
-        .friend-card {
-            border: 8px solid #ffeb3b;
-            box-shadow: 0 0 25px #00fff2;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #ffffff;
-            transition: transform 0.3s;
-            border-radius: 15px;
-            overflow: hidden;
-            height: 100%; /* Đảm bảo chiều cao đồng đều */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .friend-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 15px 40px #ff0055;
-        }
-
-        .friend-title {
-            font-family: 'Chicle', cursive;
-            animation: flash-text 1.5s infinite;
-        }
-
-
-        /* Vùng Confetti (cho hiệu ứng Bể Bụng) */
-        .confetti-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1000;
-            overflow: hidden;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: var(--color);
-            opacity: 0.8;
-            animation: fall var(--duration) linear infinite;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container text-center">
-        <!-- TIÊU ĐỀ KỊCH TÍNH -->
-        <h1 class="circus-header" id="mainTitle">
-            RẠP XIẾC CẢI LƯƠNG <br> NƯỚC MẮT VÀ VÀNG
-        </h1>
 
-        <!-- VÙNG THÔNG TIN CÁ NHÂN (CARD PROFILE) -->
-        <div class="row justify-content-center my-5">
-            <div class="col-lg-8">
-                <div class="card profile-card p-4">
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            <!-- Placeholder cho ảnh kịch sĩ -->
-                            <div style="width: 150px; height: 150px; border-radius: 50%; background-color: #ffeb3b; border: 5px solid #ff0055;" class="shadow-lg d-flex align-items-center justify-content-center">
-                                <span style="font-size: 4rem;">🎭</span>
-                            </div>
-                        </div>
-                        <div class="col-md-8 text-start">
-                            <div class="card-body">
-                                <h2 class="card-title text-danger" style="font-family: 'Lobster', cursive;">ĐẠI DANH HÀI BẢY BẢNH</h2>
-                                <p class="card-text fw-bold">Nghệ Danh: <span class="text-primary">Kép Đẹp Sáu Múi (dù chỉ có 1)</span></p>
-                                <p class="card-text">Slogan: <span class="text-success">"Hãy khóc đi! Rồi cười... nhưng phải cười thật lớn!"</span></p>
-                                <p class="card-text">Kỹ Năng Ưu Tú: <span class="badge bg-warning text-dark">Lộn 100 vòng vẫn không mệt</span>, <span class="badge bg-info">Khóc ra kim cương (giả)</span>, <span class="badge bg-danger">Hát vọng cổ 7 tông</span></p>
-                                <div class="dramatic-quote" id="quoteDisplay">
-                                    "Đời là một sân khấu lớn, mà ta là diễn viên chính... mắc cỡ nhất!"
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <header class="header-section text-center">
+        <div class="container">
+            <h1 class="display-1 fw-bold shake-on-hover">🔥 HỒ THANH BẠCH - VÔ ĐỐI THIÊN HẠ 🔥</h1>
+            <p class="lead">Nhân vật PHẢI được miêu tả, nếu không là LỖI CỦA CẢ HỆ MẶT TRỜI.</p>
         </div>
+    </header>
 
-        <!-- MÀN GIỚI THIỆU KỊCH TÍNH (Nút Bấm) -->
-        <div class="my-5">
-            <button class="btn btn-lg dramatic-btn text-white fw-bold" onclick="dramaticEntrance()">
-                BẤM VÀO ĐÂY ĐỂ TÔI... LỘ DIỆN KỊCH TÍNH!
-            </button>
-            <p class="mt-3 text-white fw-light fst-italic">Cẩn thận, màn này có thể khiến bạn cười... BỂ BỤNG!</p>
-        </div>
+    <div class="container my-5">
+        <div class="row">
 
-        <!-- VÙNG TIẾT MỤC KỊCH NGHỆ (ẨN) -->
-        <div id="dramaticContent" class="row my-5 text-center d-none" style="animation: bounce-in 1s;">
-            <div class="col-12">
-                <h3 class="text-warning bg-dark p-3 rounded shadow-lg" style="font-family: 'Chicle', cursive;">— CHƯƠNG TRÌNH ĐỘC NHẤT VÔ NHỊ —</h3>
-            </div>
-            <div class="col-md-4 mt-4">
-                <div class="p-3 bg-white rounded shadow-lg border border-primary" style="animation: rotate-3d 5s infinite linear;">
-                    <h4 class="text-danger">KHOÁI LẠC ĐẠI PHÁP</h4>
-                    <p>Khả năng giả vờ hạnh phúc tột độ khi... vừa trúng gió. Đảm bảo 100% khán giả phải nín cười!</p>
-                    <span style="font-size: 2rem;">🤣</span>
-                </div>
-            </div>
-            <div class="col-md-4 mt-4">
-                <div class="p-3 bg-white rounded shadow-lg border border-success" style="animation: pulse-border 1s infinite alternate;">
-                    <h4 class="text-success">VỌNG CỔ HỌC</h4>
-                    <p>Ca Vọng Cổ bằng ngôn ngữ... mèo kêu. Một màn trình diễn đủ sức làm lay động cả tổ tiên.</p>
-                    <span style="font-size: 2rem;">🐈</span>
-                </div>
-            </div>
-            <div class="col-md-4 mt-4">
-                <div class="p-3 bg-white rounded shadow-lg border border-warning" style="animation: shake-extreme 0.2s infinite;">
-                    <h4 class="text-primary">TRƯỜNG PHÁI LĂN LÊ</h4>
-                    <p>Lăn lộn khắp sân khấu mà không làm rớt một hạt kim tuyến nào trên áo. Kỹ thuật đỉnh cao của sự lố lăng.</p>
-                    <span style="font-size: 2rem;">🌟</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- VÙNG GIỚI THIỆU NGUYỄN HỮU DUY (ĐÃ CẬP NHẬT) -->
-        <div id="friendSection" class="row my-5 text-center">
-            <div class="col-12">
-                <h3 class="text-danger bg-warning p-4 rounded shadow-lg circus-header" style="animation: none; border: 5px solid #000; margin-bottom: 30px;">
-                    — BA ĐẠI DANH HIỆU KỊCH TÍNH CỦA <span class="text-dark">NGUYỄN HỮU DUY</span> —
-                </h3>
-            </div>
-            
-            <!-- Danh Hiệu 1: Vua Nước Mắt -->
-            <div class="col-md-4 mt-4">
-                <div class="friend-card p-3" style="animation: spin-slow-reverse 15s infinite linear;">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">😭</div>
-                    <h4 class="friend-title text-warning">VUA NƯỚC MẮT THẾ KỶ</h4>
-                    <p class="fst-italic">Nghệ danh: Bá Kiến Bán Nước Mắt</p>
-                    <p>Chuyên môn: Khóc than vật vã khi **rớt một cọng hành**. Nước mắt anh đủ để tưới 10 hecta ruộng lúa. Lệ rơi là một màn trình diễn!</p>
-                    <span class="badge bg-danger">Khóc như mưa rào</span> <span class="badge bg-info">Cảm xúc lố lăng</span>
+            <div class="col-md-4 text-center">
+                <div class="card p-3 shadow-lg">
+                    <img src="https://sf-static.upanhlaylink.com/img/image_202511048faef16079d028c1ee9937776a529ba2.jpg" 
+                         class="profile-img mx-auto" 
+                         alt="Chân dung Siêu Phẩm">
+                    
+                    <h2 class="mt-4 shake-on-hover highlight-text">HỒ THANH BẠCH</h2>
+                    <p class="text-muted">ID: #ĐộcNhấtVôNhị | Code: HTB-ERROR404</p>
+                    <hr>
+                    <ul class="list-unstyled text-start">
+                        <li><i class="fas fa-birthday-cake text-danger"></i> **Ngày Sinh:** 1/1/2200 (Thế Kỷ Sau)</li>
+                        <li><i class="fas fa-map-marker-alt text-danger"></i> **Nơi ở:** Căn cứ tối mật (Khu vực Cấm)</li>
+                        <li><i class="fas fa-briefcase text-danger"></i> **Nghề Nghiệp:** Phá Hoại Hệ Thống (Bán Chuyên)</li>
+                        <li><i class="fas fa-heart text-danger"></i> **Tình Trạng:** Đang chờ người xứng tầm</li>
+                        <li><i class="fas fa-medal text-danger"></i> **Thành Tựu:** Phá vỡ 5 Kỷ lục Guinness vì... ngủ lâu!</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Danh Hiệu 2: Đại Hiệp Tiêu Hóa -->
-            <div class="col-md-4 mt-4">
-                <div class="friend-card p-3" style="animation: pulse-border 1.5s infinite alternate;">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">🍜</div>
-                    <h4 class="friend-title text-success">ĐẠI HIỆP TIÊU HÓA</h4>
-                    <p class="fst-italic">Nghệ danh: Tiểu Hổ Thích Đồ Thiu</p>
-                    <p>Chuyên môn: Có khả năng biến tất cả đồ ăn (kể cả đồ ăn giả) thành vàng trong dạ dày. **Ăn 5 tô phở vẫn gào thét vì đói**.</p>
-                    <span class="badge bg-warning text-dark">Dũng cảm phi thường</span> <span class="badge bg-primary">Dạ dày bằng thép</span>
-                </div>
-            </div>
+            <div class="col-md-8">
+                <div class="description-card">
+                    <h2 class="text-center mb-4 highlight-text">MÔ TẢ KHÓ TIN (NHƯNG LÀ THẬT!)</h2>
+                    
+                    <p class="fs-4">
+                        <i class="fas fa-exclamation-triangle text-warning shake-on-hover"></i> **Hồ Thanh Bạch** không phải là người, anh ta là một <span class="highlight-text">Lỗi Hệ Thống!</span> Mọi thuật toán AI đều *tự động tắt* khi cố gắng phân tích sự tồn tại của anh ấy.
+                    </p>
+                    
+                    <h3 class="mt-5">1. Về Ngoại Hình (Kiêu Cục Súc)</h3>
+                    <p>
+                        Anh ta có đôi mắt... ờm... <span class="highlight-text">KHÔNG HỀ ĐẸP</span>, nhưng lại có hiệu ứng <span class="highlight-text">"Ngưng Đọng Thời Gian"</span>. Khi anh ta nhìn chằm chằm, bạn có thể thấy rõ quá trình lão hóa của mình trong 0.5 giây. Tóc thì luôn trong trạng thái **"Vừa Bị Điện Giật 5 Lần"**, tạo nên một vầng hào quang *cục súc* không ai dám lại gần.
+                    </p>
+                    
+                    <h3 class="mt-5">2. Về Tài Năng (Vô Lý Cấp Độ Max)</h3>
+                    <p>
+                        Bạch có khả năng đặc biệt là <span class="highlight-text">Biến Mất Vớ Trong Máy Giặt</span> từ khoảng cách 10km. Anh ta không cần học lái xe, vì bất cứ chiếc xe nào anh ta chạm vào cũng tự động cảm thấy **"Áp Lực Quyền Năng"** và chạy theo ý muốn của anh ta, ngay cả khi không có chìa khóa. Thậm chí, anh ta có thể làm cho **mì gói nở ra trước cả khi nước sôi!** (Một sự vi phạm vật lý không thể chấp nhận).
+                    </p>
 
-            <!-- Danh Hiệu 3: Hoàng Đế Lố Lăng -->
-            <div class="col-md-4 mt-4">
-                <div class="friend-card p-3" style="animation: shake-extreme 0.3s infinite;">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">👑</div>
-                    <h4 class="friend-title text-primary">HOÀNG ĐẾ LỐ LĂNG</h4>
-                    <p class="fst-italic">Nghệ danh: Hoàng Tử Hụt Hẫng</p>
-                    <p>Chuyên môn: Chỉ cần đi ngang qua, anh ấy sẽ làm mọi người quỳ gối vì khí chất **kịch tính không cần thiết**. Thần thái đỉnh cao 24/7.</p>
-                    <span class="badge bg-info">Lố lăng vô biên</span> <span class="badge bg-danger">Quỵ gối bất chợt</span>
+                    <h3 class="mt-5">3. Về Phong Cách Sống (Phá Phách)</h3>
+                    <p>
+                        Anh ta sống theo triết lý: <span class="highlight-text">"Cái gì không hư, ta sẽ làm cho nó hư!"</span>. Điện thoại của Bạch không bao giờ bị chai pin, vì pin tự động **sợ hãi** và tự sạc đầy mỗi khi xuống dưới 5%. Khi Bạch ho, cả khu phố nghĩ rằng có **động đất cấp 5** và chạy tán loạn.
+                    </p>
+                    
+                    <blockquote class="blockquote mt-5 border-start border-danger border-5 ps-3">
+                        <p class="mb-0 fst-italic">"Cứ để anh ấy yên! Sự tồn tại của Bạch đã là một sự xúc phạm đến logic rồi. Đừng cố hiểu!"</p>
+                        <footer class="blockquote-footer">Một nhà khoa học đã từ bỏ</footer>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- VÙNG CONFETTI (Phải nằm ngoài container để phủ toàn màn hình) -->
-    <div id="confettiContainer" class="confetti-container"></div>
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p class="mb-0">Được mã hóa bằng sự <span class="highlight-text shake-on-hover">Sợ Hãi</span> và <span class="highlight-text shake-on-hover">Cười Bể Bụng</span>.</p>
+        <p class="mb-0 small">&copy; 2025 - Bản quyền thuộc về Hồ Thanh Bạch (Hay đúng hơn là không ai dám nhận)</p>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Các hàm hỗ trợ cho Màn Kịch Tính Cải Lương
+        // JS Ngộ Nghĩnh: Thông báo bật lên ngẫu nhiên
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tự động thêm class lắc lư cho tất cả các thẻ có class 'shake-on-hover'
+            const elements = document.querySelectorAll('.shake-on-hover');
+            elements.forEach(el => {
+                // Đảm bảo hiệu ứng được kích hoạt trên hover
+                el.style.display = 'inline-block'; 
+            });
 
-        // 1. Chức năng Rung Lắc Tiêu Đề
-        document.addEventListener('DOMContentLoaded', () => {
-            const title = document.getElementById('mainTitle');
-            // Tiêu đề đã được áp dụng animation shake-extreme trong CSS.
+            // Thông báo bất ngờ
+            setTimeout(() => {
+                alert("Cảnh báo! Bạn đang xem trang web của Hồ Thanh Bạch. Hãy cẩn thận, cười quá có thể làm hỏng màn hình!");
+            }, 3000); // Hiển thị sau 3 giây
             
-            // Hàm tạo Confetti
-            function createConfetti(count) {
-                const container = document.getElementById('confettiContainer');
-                container.style.opacity = 1;
-                const colors = ['#ff0055', '#ffeb3b', '#00fff2', '#ffffff'];
-
-                for (let i = 0; i < count; i++) {
-                    const confetti = document.createElement('div');
-                    confetti.classList.add('confetti');
-                    
-                    const color = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.setProperty('--color', color);
-                    confetti.style.setProperty('--duration', `${Math.random() * 2 + 3}s`); // 3s - 5s
-                    
-                    confetti.style.left = `${Math.random() * 100}vw`;
-                    confetti.style.top = `${-Math.random() * 50}vh`; // Bắt đầu từ trên cao
-                    
-                    container.appendChild(confetti);
-
-                    // Xóa confetti sau khi kết thúc animation (5.5s)
-                    setTimeout(() => {
-                        confetti.remove();
-                        if (i === count - 1) {
-                            // Sau khi tất cả confetti đã xóa, reset opacity
-                            container.style.opacity = 0;
-                        }
-                    }, 5500);
-                }
-            }
-
-            // Hàm tạo Quote Lố Bịch
-            function generateDramaticQuote() {
-                const quotes = [
-                    "Sống là phải diễn! Diễn sâu, diễn dở, miễn sao có khán giả!",
-                    "Nước mắt tôi rơi, vàng cũng phải tan chảy theo!",
-                    "Chân lý cuộc đời? Là đôi hia vàng lấp lánh của tôi!",
-                    "Tôi không khóc vì buồn, tôi khóc vì... bụi bay vào mắt, nhưng vẫn phải thật kịch!",
-                    "Hạnh phúc là khi người ta cười, còn tôi... đang khóc than trên sân khấu!",
-                    "Đừng hỏi tôi bao nhiêu tuổi, hãy hỏi tôi đã làm bể bao nhiêu sân khấu!",
-                ];
-                const quoteElement = document.getElementById('quoteDisplay');
-                const newQuote = quotes[Math.floor(Math.random() * quotes.length)];
-                
-                // Hiệu ứng thay đổi quote giật cục
-                quoteElement.style.animation = 'none'; // Reset animation
-                void quoteElement.offsetWidth; // Trigger reflow
-                quoteElement.textContent = newQuote;
-                quoteElement.style.animation = 'bounce-in 1s ease-out';
-            }
-
-            // Tự động thay đổi quote mỗi 4 giây
-            setInterval(generateDramaticQuote, 4000);
+            // Hiệu ứng thay đổi màu nền ngẫu nhiên cho thẻ mô tả khi click
+            const descriptionCard = document.querySelector('.description-card');
+            descriptionCard.addEventListener('click', function() {
+                const colors = ['#f0ad4e', '#5cb85c', '#5bc0de', '#d9534f', '#292b2c'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                descriptionCard.style.backgroundColor = randomColor;
+                descriptionCard.style.color = 'white';
+                setTimeout(() => {
+                    descriptionCard.style.backgroundColor = '#ffffff';
+                    descriptionCard.style.color = '#212529';
+                }, 500); // Quay về màu trắng sau 0.5 giây
+            });
         });
-
-        // 2. Chức năng LỘ DIỆN KỊCH TÍNH (dramaticEntrance)
-        function dramaticEntrance() {
-            const dramaticContent = document.getElementById('dramaticContent');
-            const button = document.querySelector('.dramatic-btn');
-
-            // Ẩn nút và hiển thị nội dung mới
-            button.disabled = true;
-            button.textContent = "Màn Kịch Đã Bắt Đầu! CƯỜI ĐI!";
-            
-            // Kích hoạt hiệu ứng CONFETTI
-            createConfetti(100);
-
-            // Hiện nội dung mới sau 0.5s để đồng bộ với Confetti
-            setTimeout(() => {
-                dramaticContent.classList.remove('d-none');
-                
-                // Scroll nhẹ nhàng xuống nội dung mới (thêm chút kịch tính)
-                dramaticContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 500);
-
-            // Sau 5 giây, reset lại nút (chơi lại màn kịch khác)
-            setTimeout(() => {
-                button.disabled = false;
-                button.textContent = "BẤM VÀO ĐÂY ĐỂ TÔI... LỘ DIỆN KỊCH TÍNH!";
-            }, 5000);
-        }
-
     </script>
 </body>
 </html>
