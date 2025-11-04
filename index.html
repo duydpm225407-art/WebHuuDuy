@@ -1,342 +1,380 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Giới thiệu — Bố</title>
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-" crossorigin="anonymous">
-  <style>
-    /* Ít CSS tùy biến — chủ yếu dùng Bootstrap */
-    :root{--accent:#0d6efd}
-    body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
-    .hero{min-height:70vh;display:grid;place-items:center;background:linear-gradient(135deg, rgba(13,110,253,0.06), rgba(13,110,253,0.02));}
-    .rounded-card{border-radius:1rem;box-shadow:0 8px 24px rgba(13,110,253,0.06);}    
-    .logo-circle{width:86px;height:86px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:linear-gradient(135deg,var(--accent),#6610f2);color:white}
-    .small-muted{font-size:.9rem;color:#6c757d}
-    .progress {height: 10px;border-radius:10px}
-    /* subtle animation */
-    .fade-in-up{transform:translateY(10px);opacity:0;transition:all .6s ease-in-out}
-    .fade-in-up.show{transform:none;opacity:1}
-    /* responsive tweaks */
-    @media (max-width:576px){.hero{min-height:60vh;padding:2rem}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rạp Xiếc Cải Lương - Đại Danh Hài Bảy Bảnh</title>
+    <!-- Tải Bootstrap CSS và JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tải Font chữ Inter cho Bootstrap (mặc định) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Tải Font Chữ Kịch Tính cho tiêu đề -->
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Lobster&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Cải Lương (Melodramatic CSS) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #ffdd00, #ff0055, #00fff2); /* Gradient chói lọi */
+            background-size: 400% 400%;
+            animation: gradient-shift 10s ease infinite; /* Nền chuyển động liên tục */
+            color: #333;
+            padding-bottom: 50px;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .circus-header {
+            font-family: 'Chicle', cursive;
+            text-shadow: 5px 5px #000000, 10px 10px #ff0055; /* Shadow lố bịch */
+            animation: shake-extreme 0.5s infinite; /* Tiêu đề rung lắc liên tục */
+            font-size: clamp(2rem, 10vw, 5rem);
+            color: #ffeb3b; /* Vàng chóe */
+            border: 5px dashed #ff0055;
+            background-color: #000000;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+        }
+
+        @keyframes shake-extreme {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            25% { transform: translate(-3px, 0px) rotate(1deg); }
+            50% { transform: translate(3px, 1px) rotate(-1deg); }
+            75% { transform: translate(-1px, 2px) rotate(1deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        .profile-card {
+            border: 10px solid #ff0055; /* Viền hồng kịch tính */
+            box-shadow: 0 0 30px rgba(255, 255, 0, 0.9), 0 0 50px rgba(0, 255, 255, 0.7); /* Hào quang */
+            background-color: rgba(255, 255, 255, 0.95);
+            animation: pulse-border 2s infinite alternate; /* Viền nhấp nháy */
+            border-radius: 20px;
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: #ff0055; box-shadow: 0 0 30px rgba(255, 255, 0, 0.9); }
+            100% { border-color: #00ff2a; box-shadow: 0 0 50px rgba(0, 255, 255, 0.7); }
+        }
+
+        .dramatic-quote {
+            font-family: 'Lobster', cursive;
+            font-size: 1.5rem;
+            color: #ff0055;
+            text-align: center;
+            margin-top: 20px;
+            animation: bounce-in 1s ease-out;
+        }
+
+        @keyframes bounce-in {
+            0%, 20%, 40%, 60%, 80%, 100% { transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); }
+            0% { opacity: 0; transform: scale3d(.3, .3, .3); }
+            20% { transform: scale3d(1.1, 1.1, 1.1); }
+            40% { transform: scale3d(.9, .9, .9); }
+            60% { opacity: 1; transform: scale3d(1.03, 1.03, 1.03); }
+            80% { transform: scale3d(.97, .97, .97); }
+            100% { opacity: 1; transform: scale3d(1, 1, 1); }
+        }
+
+        .dramatic-btn {
+            font-size: 2rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            background-image: linear-gradient(45deg, #ff0055, #ffeb3b);
+            border: 5px solid #000;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
+            animation: glowing 1.5s infinite alternate;
+        }
+
+        .dramatic-btn:hover {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 15px 30px rgba(255, 0, 85, 0.8);
+        }
+
+        @keyframes glowing {
+            0% { box-shadow: 0 0 5px #ffeb3b, 0 0 20px #ff0055; }
+            100% { box-shadow: 0 0 20px #ffeb3b, 0 0 50px #ff0055; }
+        }
+        
+        /* Animation cho Bạn Hữu */
+        @keyframes flash-text {
+            0%, 100% { color: #ffeb3b; text-shadow: 0 0 10px #ff0055; }
+            50% { color: #ffffff; text-shadow: 0 0 20px #00fff2; }
+        }
+        
+        @keyframes spin-slow-reverse {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(-360deg); }
+        }
+        
+        .friend-card {
+            border: 8px solid #ffeb3b;
+            box-shadow: 0 0 25px #00fff2;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            transition: transform 0.3s;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%; /* Đảm bảo chiều cao đồng đều */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .friend-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px #ff0055;
+        }
+
+        .friend-title {
+            font-family: 'Chicle', cursive;
+            animation: flash-text 1.5s infinite;
+        }
+
+
+        /* Vùng Confetti (cho hiệu ứng Bể Bụng) */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--color);
+            opacity: 0.8;
+            animation: fall var(--duration) linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
-<body data-bs-theme="light">
+<body>
+    <div class="container text-center">
+        <!-- TIÊU ĐỀ KỊCH TÍNH -->
+        <h1 class="circus-header" id="mainTitle">
+            RẠP XIẾC CẢI LƯƠNG <br> NƯỚC MẮT VÀ VÀNG
+        </h1>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-      <div class="logo-circle">B</div>
-      <div>
-        <div style="font-weight:700">Duy Hôi Lách kkk</div>
-        <div class="small-muted">Cha — Người kể chuyện đời</div>
-      </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto gap-2">
-        <li class="nav-item"><a class="nav-link" href="#about">Giới thiệu</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Kỹ năng</a></li>
-        <li class="nav-item"><a class="nav-link" href="#work">Công việc</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
-        <li class="nav-item"><button id="themeToggle" class="btn btn-outline-secondary btn-sm">🌙</button></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <div class="card border-0 rounded-card p-4">
-          <div class="d-flex align-items-center gap-3">
-            <img src="https://sf-static.upanhlaylink.com/img/image_202511040e09f833c1834dc2728509f3a3bae915.jpg" alt="avatar" class="rounded-circle" width="92" height="92">
-            <div>
-              <h1 class="h3 mb-0">Nguyễn Văn A</h1>
-              <p class="small-muted mb-0">Kỹ sư, người cha, người kể chuyện. Yêu cà phê đen và chuyện máy móc.</p>
-              <div class="mt-2">
-                <a class="btn btn-primary btn-sm me-2" href="#contact">Mời Bố Trà</a>
-                <a class="btn btn-outline-primary btn-sm" href="#work">Xem công việc</a>
-              </div>
+        <!-- VÙNG THÔNG TIN CÁ NHÂN (CARD PROFILE) -->
+        <div class="row justify-content-center my-5">
+            <div class="col-lg-8">
+                <div class="card profile-card p-4">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <!-- Placeholder cho ảnh kịch sĩ -->
+                            <div style="width: 150px; height: 150px; border-radius: 50%; background-color: #ffeb3b; border: 5px solid #ff0055;" class="shadow-lg d-flex align-items-center justify-content-center">
+                                <span style="font-size: 4rem;">🎭</span>
+                            </div>
+                        </div>
+                        <div class="col-md-8 text-start">
+                            <div class="card-body">
+                                <h2 class="card-title text-danger" style="font-family: 'Lobster', cursive;">ĐẠI DANH HÀI BẢY BẢNH</h2>
+                                <p class="card-text fw-bold">Nghệ Danh: <span class="text-primary">Kép Đẹp Sáu Múi (dù chỉ có 1)</span></p>
+                                <p class="card-text">Slogan: <span class="text-success">"Hãy khóc đi! Rồi cười... nhưng phải cười thật lớn!"</span></p>
+                                <p class="card-text">Kỹ Năng Ưu Tú: <span class="badge bg-warning text-dark">Lộn 100 vòng vẫn không mệt</span>, <span class="badge bg-info">Khóc ra kim cương (giả)</span>, <span class="badge bg-danger">Hát vọng cổ 7 tông</span></p>
+                                <div class="dramatic-quote" id="quoteDisplay">
+                                    "Đời là một sân khấu lớn, mà ta là diễn viên chính... mắc cỡ nhất!"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <hr>
-          <p class="mb-0">"Từ sáng sớm bên chiếc máy, đến tối về kể con nghe chuyện hôm nay" — Một dòng đời giản đơn, nhưng đầy nhịp.</p>
         </div>
-      </div>
-      <div class="col-lg-6 text-center mt-4 mt-lg-0">
-        <div class="card border-0 rounded-card p-4">
-          <h5 class="mb-3">Tóm tắt nhanh</h5>
-          <ul class="list-unstyled small-muted mb-0">
-            <li><strong>Chức vụ:</strong> Kỹ sư bảo trì</li>
-            <li><strong>Kinh nghiệm:</strong> 18 năm trong ngành</li>
-            <li><strong>Sở thích:</strong> Cà phê, sửa đồ, kể chuyện</li>
-          </ul>
-          <div class="mt-3 text-center">
-            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#cvModal">Tải CV (PDF)</button>
-          </div>
+
+        <!-- MÀN GIỚI THIỆU KỊCH TÍNH (Nút Bấm) -->
+        <div class="my-5">
+            <button class="btn btn-lg dramatic-btn text-white fw-bold" onclick="dramaticEntrance()">
+                BẤM VÀO ĐÂY ĐỂ TÔI... LỘ DIỆN KỊCH TÍNH!
+            </button>
+            <p class="mt-3 text-white fw-light fst-italic">Cẩn thận, màn này có thể khiến bạn cười... BỂ BỤNG!</p>
         </div>
-      </div>
+
+        <!-- VÙNG TIẾT MỤC KỊCH NGHỆ (ẨN) -->
+        <div id="dramaticContent" class="row my-5 text-center d-none" style="animation: bounce-in 1s;">
+            <div class="col-12">
+                <h3 class="text-warning bg-dark p-3 rounded shadow-lg" style="font-family: 'Chicle', cursive;">— CHƯƠNG TRÌNH ĐỘC NHẤT VÔ NHỊ —</h3>
+            </div>
+            <div class="col-md-4 mt-4">
+                <div class="p-3 bg-white rounded shadow-lg border border-primary" style="animation: rotate-3d 5s infinite linear;">
+                    <h4 class="text-danger">KHOÁI LẠC ĐẠI PHÁP</h4>
+                    <p>Khả năng giả vờ hạnh phúc tột độ khi... vừa trúng gió. Đảm bảo 100% khán giả phải nín cười!</p>
+                    <span style="font-size: 2rem;">🤣</span>
+                </div>
+            </div>
+            <div class="col-md-4 mt-4">
+                <div class="p-3 bg-white rounded shadow-lg border border-success" style="animation: pulse-border 1s infinite alternate;">
+                    <h4 class="text-success">VỌNG CỔ HỌC</h4>
+                    <p>Ca Vọng Cổ bằng ngôn ngữ... mèo kêu. Một màn trình diễn đủ sức làm lay động cả tổ tiên.</p>
+                    <span style="font-size: 2rem;">🐈</span>
+                </div>
+            </div>
+            <div class="col-md-4 mt-4">
+                <div class="p-3 bg-white rounded shadow-lg border border-warning" style="animation: shake-extreme 0.2s infinite;">
+                    <h4 class="text-primary">TRƯỜNG PHÁI LĂN LÊ</h4>
+                    <p>Lăn lộn khắp sân khấu mà không làm rớt một hạt kim tuyến nào trên áo. Kỹ thuật đỉnh cao của sự lố lăng.</p>
+                    <span style="font-size: 2rem;">🌟</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- VÙNG GIỚI THIỆU NGUYỄN HỮU DUY (ĐÃ CẬP NHẬT) -->
+        <div id="friendSection" class="row my-5 text-center">
+            <div class="col-12">
+                <h3 class="text-danger bg-warning p-4 rounded shadow-lg circus-header" style="animation: none; border: 5px solid #000; margin-bottom: 30px;">
+                    — BA ĐẠI DANH HIỆU KỊCH TÍNH CỦA <span class="text-dark">NGUYỄN HỮU DUY</span> —
+                </h3>
+            </div>
+            
+            <!-- Danh Hiệu 1: Vua Nước Mắt -->
+            <div class="col-md-4 mt-4">
+                <div class="friend-card p-3" style="animation: spin-slow-reverse 15s infinite linear;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">😭</div>
+                    <h4 class="friend-title text-warning">VUA NƯỚC MẮT THẾ KỶ</h4>
+                    <p class="fst-italic">Nghệ danh: Bá Kiến Bán Nước Mắt</p>
+                    <p>Chuyên môn: Khóc than vật vã khi **rớt một cọng hành**. Nước mắt anh đủ để tưới 10 hecta ruộng lúa. Lệ rơi là một màn trình diễn!</p>
+                    <span class="badge bg-danger">Khóc như mưa rào</span> <span class="badge bg-info">Cảm xúc lố lăng</span>
+                </div>
+            </div>
+
+            <!-- Danh Hiệu 2: Đại Hiệp Tiêu Hóa -->
+            <div class="col-md-4 mt-4">
+                <div class="friend-card p-3" style="animation: pulse-border 1.5s infinite alternate;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">🍜</div>
+                    <h4 class="friend-title text-success">ĐẠI HIỆP TIÊU HÓA</h4>
+                    <p class="fst-italic">Nghệ danh: Tiểu Hổ Thích Đồ Thiu</p>
+                    <p>Chuyên môn: Có khả năng biến tất cả đồ ăn (kể cả đồ ăn giả) thành vàng trong dạ dày. **Ăn 5 tô phở vẫn gào thét vì đói**.</p>
+                    <span class="badge bg-warning text-dark">Dũng cảm phi thường</span> <span class="badge bg-primary">Dạ dày bằng thép</span>
+                </div>
+            </div>
+
+            <!-- Danh Hiệu 3: Hoàng Đế Lố Lăng -->
+            <div class="col-md-4 mt-4">
+                <div class="friend-card p-3" style="animation: shake-extreme 0.3s infinite;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">👑</div>
+                    <h4 class="friend-title text-primary">HOÀNG ĐẾ LỐ LĂNG</h4>
+                    <p class="fst-italic">Nghệ danh: Hoàng Tử Hụt Hẫng</p>
+                    <p>Chuyên môn: Chỉ cần đi ngang qua, anh ấy sẽ làm mọi người quỳ gối vì khí chất **kịch tính không cần thiết**. Thần thái đỉnh cao 24/7.</p>
+                    <span class="badge bg-info">Lố lăng vô biên</span> <span class="badge bg-danger">Quỵ gối bất chợt</span>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about" class="py-5">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-8">
-        <div class="card p-4 rounded-card">
-          <h3>Giới thiệu</h3>
-          <p class="lead">Bố là người thích dùng tay để sửa mọi thứ — từ chiếc đồng hồ hỏng, xe máy ì ạch đến mối quan hệ cần nối lại. Trong công việc, bố chăm chỉ, tỉ mỉ và luôn ưu tiên an toàn.</p>
-          <p>Muốn thay đổi nội dung này? Thay tên, kinh nghiệm, và câu chuyện nhỏ để thành "bố" của mày là được — trang này thiết kế để dễ sửa, copy & paste vào file HTML rồi mở bằng trình duyệt.</p>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card p-3 rounded-card">
-          <h5>Kết quả nổi bật</h5>
-          <ul class="mb-0">
-            <li>Quản lý đội bảo trì 10+ người</li>
-            <li>Giảm chi phí vận hành 12%/năm</li>
-            <li>Đóng góp 5 sáng kiến an toàn</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- VÙNG CONFETTI (Phải nằm ngoài container để phủ toàn màn hình) -->
+    <div id="confettiContainer" class="confetti-container"></div>
 
-<!-- SKILLS -->
-<section id="skills" class="py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <h4>Kỹ năng</h4>
-        <p class="small-muted">Các kỹ năng chính được thể hiện bằng thanh tiến độ. Thanh sẽ được animate khi vào view.</p>
-        <div class="mb-3">
-          <label class="small">Bảo trì cơ khí</label>
-          <div class="progress mb-2"><div class="progress-bar" role="progressbar" style="width:0" data-target="90" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div></div>
-        </div>
-        <div class="mb-3">
-          <label class="small">Điện — Điện tử</label>
-          <div class="progress mb-2"><div class="progress-bar" role="progressbar" style="width:0" data-target="80" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div></div>
-        </div>
-        <div class="mb-3">
-          <label class="small">Quản lý đội</label>
-          <div class="progress mb-2"><div class="progress-bar" role="progressbar" style="width:0" data-target="85" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div></div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <h4>Dịch vụ</h4>
-        <p>Những gì bố có thể giúp: sửa máy, tư vấn bảo trì, lắp đặt hệ thống nhỏ, giao lưu truyền dạy kỹ thuật cho thợ trẻ.</p>
-        <div class="row g-2">
-          <div class="col-6"><div class="card p-2 text-center">Lắp đặt<br><span class="small-muted">Hệ thống nhỏ</span></div></div>
-          <div class="col-6"><div class="card p-2 text-center">Bảo trì<br><span class="small-muted">Định kỳ</span></div></div>
-          <div class="col-6"><div class="card p-2 text-center">Tư vấn<br><span class="small-muted">An toàn</span></div></div>
-          <div class="col-6"><div class="card p-2 text-center">Sửa chữa<br><span class="small-muted">Khẩn cấp</span></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Các hàm hỗ trợ cho Màn Kịch Tính Cải Lương
 
-<!-- WORK / PORTFOLIO -->
-<section id="work" class="py-5">
-  <div class="container">
-    <h4 class="mb-4">Một vài dự án</h4>
-    <div class="row g-3">
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="project">
-          <div class="card-body">
-            <h5 class="card-title">Sửa máy hàng loạt</h5>
-            <p class="card-text small-muted">Bảo trì dây chuyền, tối ưu quy trình</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="project">
-          <div class="card-body">
-            <h5 class="card-title">Tối giản tiêu hao</h5>
-            <p class="card-text small-muted">Giảm tiêu hao, tiết kiệm năng lượng</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="project">
-          <div class="card-body">
-            <h5 class="card-title">Đào tạo thợ</h5>
-            <p class="card-text small-muted">Chương trình truyền nghề cho cộng đồng</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        // 1. Chức năng Rung Lắc Tiêu Đề
+        document.addEventListener('DOMContentLoaded', () => {
+            const title = document.getElementById('mainTitle');
+            // Tiêu đề đã được áp dụng animation shake-extreme trong CSS.
+            
+            // Hàm tạo Confetti
+            function createConfetti(count) {
+                const container = document.getElementById('confettiContainer');
+                container.style.opacity = 1;
+                const colors = ['#ff0055', '#ffeb3b', '#00fff2', '#ffffff'];
 
-<!-- TESTIMONIALS (Carousel) -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <h5>Lời của đồng nghiệp</h5>
-    <div id="testi" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card p-4">
-            <blockquote class="blockquote mb-0">
-              <p>"Bố luôn đến sớm và rời đi muộn — tấm gương cho cả đội."</p>
-              <footer class="blockquote-footer">Anh Nam, Quản đốc</footer>
-            </blockquote>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card p-4">
-            <blockquote class="blockquote mb-0">
-              <p>"Tinh thần cầu tiến và tỉ mỉ của bố giúp nhà máy an toàn hơn."</p>
-              <footer class="blockquote-footer">Chị Lan, Kỹ thuật</footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#testi" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-      <button class="carousel-control-next" type="button" data-bs-target="#testi" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
-    </div>
-  </div>
-</section>
+                for (let i = 0; i < count; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.setProperty('--color', color);
+                    confetti.style.setProperty('--duration', `${Math.random() * 2 + 3}s`); // 3s - 5s
+                    
+                    confetti.style.left = `${Math.random() * 100}vw`;
+                    confetti.style.top = `${-Math.random() * 50}vh`; // Bắt đầu từ trên cao
+                    
+                    container.appendChild(confetti);
 
-<!-- CONTACT -->
-<section id="contact" class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <h4>Liên hệ</h4>
-        <p class="small-muted">Gửi lời nhắn hoặc đặt lịch gặp bố.</p>
-        <form id="contactForm" class="needs-validation" novalidate>
-          <div class="mb-3">
-            <label class="form-label">Tên</label>
-            <input type="text" class="form-control" id="name" required>
-            <div class="invalid-feedback">Nhập tên đi chứ.</div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required>
-            <div class="invalid-feedback">Email hợp lệ nhé.</div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Tin nhắn</label>
-            <textarea class="form-control" id="message" rows="4" required></textarea>
-            <div class="invalid-feedback">Viết vài chữ đi ạ.</div>
-          </div>
-          <button class="btn btn-primary">Gửi</button>
-        </form>
-      </div>
-      <div class="col-lg-6">
-        <div class="card p-3 rounded-card">
-          <h5>Thông tin</h5>
-          <p class="mb-1"><strong>Điện thoại:</strong> 09xx xxx xxx</p>
-          <p class="mb-1"><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</p>
-          <p class="mb-0 small-muted">(Thay thông tin thật vào để khách liên hệ dễ hơn.)</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                    // Xóa confetti sau khi kết thúc animation (5.5s)
+                    setTimeout(() => {
+                        confetti.remove();
+                        if (i === count - 1) {
+                            // Sau khi tất cả confetti đã xóa, reset opacity
+                            container.style.opacity = 0;
+                        }
+                    }, 5500);
+                }
+            }
 
-<!-- FOOTER -->
-<footer class="py-4 bg-dark text-white">
-  <div class="container text-center small-muted">© 2025 Nguyễn Văn A • Thiết kế đơn giản — dễ chỉnh sửa</div>
-</footer>
+            // Hàm tạo Quote Lố Bịch
+            function generateDramaticQuote() {
+                const quotes = [
+                    "Sống là phải diễn! Diễn sâu, diễn dở, miễn sao có khán giả!",
+                    "Nước mắt tôi rơi, vàng cũng phải tan chảy theo!",
+                    "Chân lý cuộc đời? Là đôi hia vàng lấp lánh của tôi!",
+                    "Tôi không khóc vì buồn, tôi khóc vì... bụi bay vào mắt, nhưng vẫn phải thật kịch!",
+                    "Hạnh phúc là khi người ta cười, còn tôi... đang khóc than trên sân khấu!",
+                    "Đừng hỏi tôi bao nhiêu tuổi, hãy hỏi tôi đã làm bể bao nhiêu sân khấu!",
+                ];
+                const quoteElement = document.getElementById('quoteDisplay');
+                const newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                
+                // Hiệu ứng thay đổi quote giật cục
+                quoteElement.style.animation = 'none'; // Reset animation
+                void quoteElement.offsetWidth; // Trigger reflow
+                quoteElement.textContent = newQuote;
+                quoteElement.style.animation = 'bounce-in 1s ease-out';
+            }
 
-<!-- CV Modal -->
-<div class="modal fade" id="cvModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">CV — Nguyễn Văn A</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p class="small-muted">Mẫu CV này là ví dụ. Thay bằng file PDF thật nếu cần.</p>
-        <div class="ratio ratio-16x9">
-          <iframe src="https://vadimdez.github.io/ng-portfolio/resume-sample.pdf" title="cv"></iframe>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-primary" href="#" download>Download CV</a>
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-      </div>
-    </div>
-  </div>
-</div>
+            // Tự động thay đổi quote mỗi 4 giây
+            setInterval(generateDramaticQuote, 4000);
+        });
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
-<script>
-// Smooth scroll for navbar links
-document.querySelectorAll('a.nav-link').forEach(a=>{
-  a.addEventListener('click', e=>{
-    if(a.hash){
-      e.preventDefault();
-      document.querySelector(a.hash).scrollIntoView({behavior:'smooth',block:'start'});
-      history.replaceState(null,'',a.hash);
-    }
-  })
-});
+        // 2. Chức năng LỘ DIỆN KỊCH TÍNH (dramaticEntrance)
+        function dramaticEntrance() {
+            const dramaticContent = document.getElementById('dramaticContent');
+            const button = document.querySelector('.dramatic-btn');
 
-// Animate progress bars when in viewport
-function animateProgress(){
-  document.querySelectorAll('.progress-bar').forEach(bar=>{
-    const target = parseInt(bar.getAttribute('data-target')||0,10);
-    if(bar.style.width && bar.style.width !== '0%') return;
-    const rect = bar.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 50){
-      bar.style.width = target + '%';
-      bar.setAttribute('aria-valuenow', target);
-    }
-  })
-}
-window.addEventListener('scroll', animateProgress); window.addEventListener('load', ()=>{animateProgress(); reveal();});
+            // Ẩn nút và hiển thị nội dung mới
+            button.disabled = true;
+            button.textContent = "Màn Kịch Đã Bắt Đầu! CƯỜI ĐI!";
+            
+            // Kích hoạt hiệu ứng CONFETTI
+            createConfetti(100);
 
-// Simple reveal animation
-function reveal(){document.querySelectorAll('.fade-in-up').forEach(el=>{el.classList.add('show')})}
+            // Hiện nội dung mới sau 0.5s để đồng bộ với Confetti
+            setTimeout(() => {
+                dramaticContent.classList.remove('d-none');
+                
+                // Scroll nhẹ nhàng xuống nội dung mới (thêm chút kịch tính)
+                dramaticContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 500);
 
-// Simple form validation + fake submit
-(function(){
-  var form = document.getElementById('contactForm');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(!form.checkValidity()){
-      form.classList.add('was-validated');
-      return;
-    }
-    // fake send: show toast / alert
-    alert('Đã gửi lời nhắn. Bố sẽ liên lạc sớm nhé!');
-    form.reset(); form.classList.remove('was-validated');
-  });
-})();
+            // Sau 5 giây, reset lại nút (chơi lại màn kịch khác)
+            setTimeout(() => {
+                button.disabled = false;
+                button.textContent = "BẤM VÀO ĐÂY ĐỂ TÔI... LỘ DIỆN KỊCH TÍNH!";
+            }, 5000);
+        }
 
-// Theme toggle (light/dark)
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', ()=>{
-  const html = document.documentElement;
-  const current = html.getAttribute('data-bs-theme') || 'light';
-  const next = current === 'light' ? 'dark' : 'light';
-  html.setAttribute('data-bs-theme', next);
-  themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
-});
-
-// Optional: quick replace helper (for non-dev users) — press R to edit name placeholders in prompt
-window.addEventListener('keydown', (e)=>{ if(e.key.toLowerCase()==='r' && confirm('Replace tên mẫu bằng tên thật? (thao tác tự động)')){
-  const name = prompt('Nhập tên thật:','Nguyễn Văn A');
-  if(name){ document.title = name + ' — Giới thiệu'; document.querySelectorAll('h1.h3, .navbar-brand div > div').forEach(el=>{ if(el) el.innerText = name }); }
-}})
-</script>
+    </script>
 </body>
 </html>
